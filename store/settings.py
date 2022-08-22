@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-import os
+import os , django_heroku, dj_database_url
 from pathlib import Path
-import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-dodv@&=c7@)w4o-2hfsxrw!l7l8ov_)9(v(#(i07gch$f*htuh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['footprintz.herokuapp.com', 'footprintz.netlify.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['footprintzz.herokuapp.com', 'footprintz.netlify.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -87,12 +87,26 @@ WSGI_APPLICATION = 'store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'da5nvel139kjuh',
+        'HOST': 'ec2-54-228-125-183.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'kuvapkwblszbrp',
+        'PASSWORD': '1b7cdcb51ba98efbd92986d46fbfe3726917871f9470a9528f613fbfacdb8f0f'
+   }
 }
+
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 
 
 # Password validation
