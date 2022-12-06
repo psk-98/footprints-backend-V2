@@ -1,0 +1,5 @@
+# static files
+/static/
+/staticfiles/
+/data.json
+/Procfile
