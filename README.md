@@ -1,7 +1,3 @@
-# footprints-backend-V2
-
-Backend for [footprints](https://footprintz.netlify.app/) made with Django, django-rest, knox for authentication and cloudinary for media host.
-
 # Welcome to My Footprints Backend
 This backend is built using Django, a Python web framework for building web applications. It also utilizes Django REST framework for creating APIs, Django REST Knox for handling authentication, and Cloudinary for hosting user-uploaded media files.
 
