@@ -10,24 +10,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-import os , django_heroku, dj_database_url
+import os , environ
 from pathlib import Path
 
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STRIPE_KEY = 'sk_test_51LXAGyHLXSuXXRsq33i3EmuZQrzKxLwebZuI2PbLc9qI272GpfO7hmEf65txEWVV6PHV7RC9StyCCb71PRqjwySZ00QGwBEesv' 
+STRIPE_KEY = env('STRIPE_KEY') 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dodv@&=c7@)w4o-2hfsxrw!l7l8ov_)9(v(#(i07gch$f*htuh'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['footprintzz.herokuapp.com', 'footprintz.netlify.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [ 'footprintz.netlify.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,10 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'environ',
     'corsheaders',
     'rest_framework',
     'knox',
-
+    
     'product',
     'order',
     'accounts',
@@ -88,26 +91,23 @@ WSGI_APPLICATION = 'store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd30p3ujcuunr24',
-        'HOST': 'ec2-52-49-201-212.eu-west-1.compute.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'ncynktfdbexbro',
-        'PASSWORD': 'cd96aa2e7eda2c3fb96546923d8d87baefe21443ca96f504f220d3c8edb90f36'
-   }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
-#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': env('DATABASE_NAME'),
+#         'HOST': 'ec2-52-49-201-212.eu-west-1.compute.amazonaws.com',
+#         'PORT': 5432,
+#         'USER': env('DATABASE_USER'),
+#         'PASSWORD': env('DATABASE_PASSWORD')
+#    }
+# }
 
 
 # Password validation
@@ -160,9 +160,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
 
 CLOUDINARY = {
-  'cloud_name': 'psk-98',  
-  'api_key': '228848656179335',  
-  'api_secret': 'uHytdMA1b-_2HdZ-KdJwdgMSu3k',  
+  'cloud_name': env('CLOUD_NAME'),  
+  'api_key': env('CLOUDINARY_API_KEY'),  
+  'api_secret': env('CLOUDINARY_API_SECRET'),  
 }
 
 # Default primary key field type
