@@ -7,6 +7,6 @@ You will also need to sign up for an account on Cloudinary in order to use the a
 
 To run the server, run python manage.py runserver in the root directory of the project. This will start the server on http://localhost:8000/ and will automatically reload the page when changes are made.
 
-Please note that this is a mock online backend and to see front-end code go [here](https://github.com/psk-98/footprints/tree/v2) and to see it [live](https://footprintz.netlify.app) 
+Please note that this is a mock online backend and to see front-end code go [here](https://github.com/psk-98/footprints/tree/next) and to see it [live](https://footprintz.netlify.app) 
 
 Thank you for visiting my online backend! I hope you find it useful in building your own project with similar stack.
