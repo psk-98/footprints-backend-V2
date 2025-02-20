@@ -9,3 +9,9 @@ venv
 docker-compose.yml
 Dockerfile
 /staticfiles
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
