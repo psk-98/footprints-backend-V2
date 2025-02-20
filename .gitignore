@@ -1,5 +1,11 @@
 .env
+.env.prod
+.env.prod.database
 /bin
 /lib
 /lib64
 pyvenv.cfg
+venv
+docker-compose.yml
+Dockerfile
+/staticfiles
