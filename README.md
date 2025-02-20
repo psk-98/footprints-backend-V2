@@ -11,7 +11,7 @@ all of the dependencies.
 
 To get started, make sure you have a [Stripe](https://stripe.com/) and
 [Cloudinary](https://cloudinary.com/) account then also make sure you
-have[Docker](https://www.docker.com/) and
+have [Docker](https://www.docker.com/) and
 [Docker Compose](https://docs.docker.com/compose/) installed on your machine.
 
 Then run the following in your terminal(development) 
