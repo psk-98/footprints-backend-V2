@@ -1,12 +1,30 @@
 # Welcome to My Footprints Backend
-This backend is built using Django, a Python web framework for building web applications. It also utilizes Django REST framework for creating APIs, Django REST Knox for handling authentication, and Cloudinary for hosting user-uploaded media files.
 
-To get started, make sure you have Python and pip installed on your machine. Then, clone the repository and run pip install -r requirements.txt to install all of the dependencies.
+This backend is built using Django, a Python web framework for building web
+applications. It also utilizes Django REST framework for creating APIs, Django
+REST Knox for handling authentication, Cloudinary for hosting user-uploaded
+media files and Docker for easier development and deployment on the cloud.
 
-You will also need to sign up for an account on Cloudinary in order to use the app.
+To get started, make sure you have Python and pip installed on your machine.
+Then, clone the repository and run pip install -r requirements.txt to install
+all of the dependencies.
 
-To run the server, run python manage.py runserver in the root directory of the project. This will start the server on http://localhost:8000/ and will automatically reload the page when changes are made.
+To get started, make sure you have a [Stripe](https://stripe.com/) and
+[Cloudinary](https://cloudinary.com/) account then also make sure you
+have[Docker](https://www.docker.com/) and
+[Docker Compose](https://docs.docker.com/compose/) installed on your machine.
 
-Please note that this is a mock online backend and to see front-end code go [here](https://github.com/psk-98/footprints/tree/v2) and to see it [live](https://footprintz.netlify.app) 
+Then run the following in your terminal(development) - cp
+.docker/app/Dockerfile.dev Dockerfile - cp .docker/app/docker-compose.dev.yml
+docker-compose.yml - cp .env.examlpe.dev env #fill in the your keys - docker
+-ompose up --build - docker-compose exec web bin/bash - python manage.py
+migrate.py #will add seeding at some point
 
-Thank you for visiting my online backend! I hope you find it useful in building your own project with similar stack.
+Once the above is done, you should see the app on http://localhost:8000/
+
+Please note that this is a mock store api, to see the front-end code go
+[here](https://github.com/psk-98/footprints) and to see it
+[live](https://footprints-lake.vercel.app)
+
+Thank you for visiting my online backend! I hope you find it useful in building
+your own project with similar stack.
